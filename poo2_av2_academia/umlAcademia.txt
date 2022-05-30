@@ -1,0 +1,55 @@
+@startuml
+
+title Academia
+
+class Pessoa {
+  +int id
+  +String cpf
+  +String nome
+  +String telefone
+  +String email
+  +Data dataNasc
+  +String endereco
+}
+
+class Professor {
+  +int id
+  +String turno
+}
+
+class Aluno {
+  +int id
+  +Professor professor
+  +Treino treino
+  +String objetivo
+}
+
+class Treino {
+  +int id
+  +String tipo
+  +int vezes
+  +int duracao
+}
+
+class Exercicio {
+  +int id
+  +String nome
+  +String descricao
+  +int repeticoes
+  +int series
+}
+
+class ExercicioTreino {
+  +int id
+  +int id_exercicio
+  +int id_treino
+}
+
+Pessoa <|-down- Professor
+Pessoa <|-down- Aluno
+Aluno *-- Treino
+Treino *-- Exercicio
+Treino *-- ExercicioTreino
+Exercicio *-- ExercicioTreino
+
+@enduml
