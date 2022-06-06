@@ -1,0 +1,1 @@
+__all__ = ['endereco', 'pessoa', 'colaborador', 'professor', 'exercicio', 'treino', 'exercicioTreino', 'aluno']
